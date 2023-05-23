@@ -5,6 +5,13 @@ import java.util.Objects;
 import java.util.Set;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+
+@Entity
+@Table(name="tb_product")
 public class Product implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -13,7 +20,8 @@ public class Product implements Serializable{
 	private String description;
 	private Double price;
 	private String imageUrl;
-
+	
+	@Transient
 	private Set<Category>categories = new HashSet<>();;
 	
 	public Product(Long id, String name, String description, Double price, String imageUrl) {
