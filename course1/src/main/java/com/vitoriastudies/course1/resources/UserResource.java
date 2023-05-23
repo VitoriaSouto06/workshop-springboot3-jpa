@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitoriastudies.course.entities.User;
-import com.vitoriastudies.course.services.UserService;
+import com.vitoriastudies.course1.entities.User;
+import com.vitoriastudies.course1.service.UserService;
+
+
 
 @RestController
 @RequestMapping("/users")

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vitoriastudies.course1.entities.Order;
+import com.vitoriastudies.course1.service.OrderService;
 
 @RestController
 @RequestMapping("/orders")

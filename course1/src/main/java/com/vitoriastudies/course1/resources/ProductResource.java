@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vitoriastudies.course1.entities.Product;
+import com.vitoriastudies.course1.service.ProductService;
 
 
 
