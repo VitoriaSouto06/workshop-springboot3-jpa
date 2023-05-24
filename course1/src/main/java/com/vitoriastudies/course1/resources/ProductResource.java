@@ -15,7 +15,7 @@ import com.vitoriastudies.course1.service.ProductService;
 
 
 @RestController
-@RequestMapping
+@RequestMapping("/products")
 public class ProductResource {
 	
 	@Autowired

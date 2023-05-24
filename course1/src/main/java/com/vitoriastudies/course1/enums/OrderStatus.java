@@ -1,7 +1,6 @@
 package com.vitoriastudies.course1.enums;
 
 
-
 public enum OrderStatus {
 
 	WAITING_PAYMENT(1),
