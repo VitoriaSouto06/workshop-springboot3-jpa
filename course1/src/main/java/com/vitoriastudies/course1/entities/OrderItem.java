@@ -3,6 +3,7 @@ package com.vitoriastudies.course1.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vitoriastudies.course1.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -16,7 +17,7 @@ public class OrderItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@EmbeddedId
-	private OrderItemPK id;
+	private OrderItemPK id = new OrderItemPK();
 	private Integer quantity;
 	private Double price;
 	
@@ -31,7 +32,7 @@ public class OrderItem implements Serializable{
 		this.quantity = quantity;
 		this.price = price;
 	}
-
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
