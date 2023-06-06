@@ -3,6 +3,7 @@ package com.vitoriastudies.course1.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.aspectj.apache.bcel.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -37,5 +38,20 @@ public class UserService {
 	
 	public void delete(Long id) {
 		 userRepository.deleteById(id);
+	}
+	
+	public User update(Long id,User user) {
+		User entity = userRepository.getReferenceById(id);
+		uopdateData(entity,user);
+		return userRepository.save(entity);
+		}
+
+	private void uopdateData(User entity, User user) {
+		entity.setName(user.getName());
+		entity.setEmail(user.getEmail());
+		entity.setPhone(user.getPhone());
+		
+	
+	
 	}
 }
