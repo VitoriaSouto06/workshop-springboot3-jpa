@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vitoriastudies.course1.entities.Product;
 import com.vitoriastudies.course1.entities.User;
 import com.vitoriastudies.course1.repositories.UserRepository;
+import com.vitoriastudies.course1.service.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -28,7 +29,7 @@ public class UserService {
 	
 	public User findById(Long id){
 		Optional<User> obj = userRepository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public User insert(User user) {
